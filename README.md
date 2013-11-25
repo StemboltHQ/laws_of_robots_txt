@@ -1,6 +1,8 @@
 # LawsOfRobotsTxt
 
-TODO: Write a gem description
+1. A robot may not index staging servers
+2. A robot must obey the sitemap
+3. A robot may not injure SEO or, through inaction, cause SEO to come to harm.
 
 ## Installation
 
@@ -12,17 +14,28 @@ And then execute:
 
     $ bundle
 
-Or install it yourself as:
-
-    $ gem install laws_of_robots_txt
+Be sure to remove `public/robots.txt`, if it exists
 
 ## Usage
 
-TODO: Write usage instructions here
+LawsOfRobotsTxt installs a rack middleware into your application which renders
+a different `/robots.txt` based on the request's domain.
+
+It looks in `config/robots/` for a file named `<DOMAIN>.txt`, for example,
+`config/robots/www.example.com.txt`. A server restart is required to pick up
+changes.
+
+If no file exists for the requests domain, it renders a default
+
+```
+# Robots not allowed on this domain
+User-Agent: *
+Disallow: /
+```
 
 ## Contributing
 
-1. Fork it ( http://github.com/<my-github-username>/laws_of_robots_txt/fork )
+1. Fork it ( http://github.com/freerunningtech/laws_of_robots_txt/fork )
 2. Create your feature branch (`git checkout -b my-new-feature`)
 3. Commit your changes (`git commit -am 'Add some feature'`)
 4. Push to the branch (`git push origin my-new-feature`)
