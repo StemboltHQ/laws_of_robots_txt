@@ -8,9 +8,9 @@ Gem::Specification.new do |spec|
   spec.version       = LawsOfRobotsTxt::VERSION
   spec.authors       = ["John Hawthorn"]
   spec.email         = ["john@freerunningtechnologies.com"]
-  spec.summary       = %q{TODO: Write a short summary. Required.}
-  spec.description   = %q{TODO: Write a longer description. Optional.}
-  spec.homepage      = ""
+  spec.summary       = %q{Rack middleware providing a per-domain robots.txt}
+  spec.description   = "1. A robot may not index staging servers\n2. A robot must obey the sitemap\n3. A robot may not injure SEO or, through inaction, cause SEO to come to harm."
+  spec.homepage      = "https://github.com/freerunningtech/laws_of_robots_txt"
   spec.license       = "MIT"
 
   spec.files         = `git ls-files`.split($/)
@@ -18,6 +18,7 @@ Gem::Specification.new do |spec|
   spec.test_files    = spec.files.grep(%r{^(test|spec|features)/})
   spec.require_paths = ["lib"]
 
-  spec.add_development_dependency "bundler", "~> 1.5"
+  spec.add_development_dependency "bundler", "~> 1.3"
   spec.add_development_dependency "rake"
+  spec.add_development_dependency "rack-test"
 end

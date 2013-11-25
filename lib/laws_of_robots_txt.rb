@@ -1,5 +1,3 @@
 require "laws_of_robots_txt/version"
+require "laws_of_robots_txt/middleware"
 
-module LawsOfRobotsTxt
-  # Your code goes here...
-end
